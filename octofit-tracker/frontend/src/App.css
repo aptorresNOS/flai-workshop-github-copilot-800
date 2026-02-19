@@ -1,38 +1,337 @@
+/* =============================================
+   OctoFit Tracker — NOS Brand Theme
+   NOS Palette: Yellow #FFD100 | Black #1A1A1A
+   ============================================= */
+
+:root {
+  --nos-yellow:         #FFD100;
+  --nos-yellow-dark:    #E0B800;
+  --nos-yellow-light:   #FFF3B0;
+  --nos-black:          #1A1A1A;
+  --nos-dark:           #000000;
+  --nos-gray-dark:      #333333;
+  --nos-gray-mid:       #666666;
+  --nos-gray-light:     #F2F2F2;
+  --nos-white:          #FFFFFF;
+
+  --octofit-primary:    var(--nos-yellow);
+  --octofit-gradient:   linear-gradient(135deg, #1A1A1A 0%, #333333 100%);
+  --octofit-card-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+  --octofit-card-hover:  0 8px 28px rgba(0, 0, 0, 0.20);
+}
+
+/* ---- Global ---- */
+body {
+  background-color: var(--nos-gray-light);
+  color: var(--nos-black);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+/* ---- Navbar ---- */
+.navbar-nos {
+  background-color: var(--nos-dark) !important;
+  border-bottom: 3px solid var(--nos-yellow);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: 0.4px;
+  color: var(--nos-yellow) !important;
+}
+
+.navbar-brand img.nos-logo {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  margin-right: 0.6rem;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85) !important;
+  transition: color 0.15s ease;
+}
+
+.nav-link:hover {
+  color: var(--nos-yellow) !important;
+}
+
+.nav-link.active {
+  font-weight: 700;
+  color: var(--nos-yellow) !important;
+  border-bottom: 2px solid var(--nos-yellow);
+}
+
+/* ---- Hero Section ---- */
+.hero-section {
+  background: linear-gradient(135deg, var(--nos-dark) 0%, var(--nos-gray-dark) 60%, #4a4a00 100%);
+  color: var(--nos-white);
+  padding: 5rem 2rem 4rem;
+  text-align: center;
+  clip-path: ellipse(100% 90% at 50% 0%);
+  margin-bottom: 2.5rem;
+  border-bottom: 4px solid var(--nos-yellow);
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--nos-yellow);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.40);
+}
+
+.hero-section .lead {
+  font-size: 1.25rem;
+  opacity: 0.92;
+  color: var(--nos-white);
+}
+
+/* ---- Feature Cards (home page) ---- */
+.feature-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: none !important;
+  box-shadow: var(--octofit-card-shadow);
+  border-radius: 0.875rem !important;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--octofit-card-hover);
+}
+
+.feature-card .card-body {
+  padding: 2rem 1.5rem;
+}
+
+.feature-icon {
+  font-size: 2.75rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+/* ---- Data Cards (component wrappers) ---- */
+.data-card {
+  border: none !important;
+  box-shadow: var(--octofit-card-shadow);
+  border-radius: 0.875rem !important;
+  overflow: hidden;
+}
+
+.data-card .card-header {
+  background: linear-gradient(90deg, var(--nos-dark) 0%, var(--nos-gray-dark) 100%);
+  color: var(--nos-yellow);
+  padding: 1rem 1.5rem;
+  border-bottom: 3px solid var(--nos-yellow);
+}
+
+.data-card .card-header h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* ---- Tables ---- */
+.table thead th {
+  background-color: var(--nos-dark);
+  color: var(--nos-yellow);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.6px;
+  vertical-align: middle;
+  border-color: var(--nos-gray-dark);
+}
+
+.table tbody td {
+  vertical-align: middle;
+  color: var(--nos-black);
+  border-color: #e0e0e0;
+}
+
+.table-hover tbody tr:hover {
+  background-color: var(--nos-yellow-light);
+}
+
+/* ---- Badges ---- */
+.badge {
+  font-size: 0.78em;
+  padding: 0.4em 0.7em;
+  border-radius: 0.4em;
+  font-weight: 600;
+}
+
+/* Rank medals */
+.rank-1 { background-color: #ffd700 !important; color: #000 !important; }
+.rank-2 { background-color: #c0c0c0 !important; color: #222 !important; }
+.rank-3 { background-color: #cd7f32 !important; color: #fff !important; }
+
+/* Member pill badges */
+.member-badge {
+  display: inline-block;
+  background-color: var(--nos-yellow-light);
+  color: var(--nos-black);
+  border: 1px solid var(--nos-yellow-dark);
+  border-radius: 1rem;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin: 0.1rem 0.1rem 0.1rem 0;
+}
+
+/* ---- Workout / Team Cards ---- */
+.workout-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: none !important;
+  box-shadow: var(--octofit-card-shadow);
+  border-radius: 0.875rem !important;
+  height: 100%;
+  overflow: hidden;
+}
+
+.workout-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--octofit-card-hover);
+}
+
+.workout-card .card-header {
+  background: linear-gradient(90deg, var(--nos-dark) 0%, var(--nos-gray-dark) 100%);
+  color: var(--nos-yellow);
+  border-bottom: 3px solid var(--nos-yellow);
+}
+
+/* ---- Empty State ---- */
+.empty-state {
+  text-align: center;
+  padding: 3.5rem 2rem;
+  color: var(--nos-gray-mid);
+}
+
+.empty-state .empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.45;
+  display: block;
+}
+
+/* ---- Loading Spinner ---- */
+.loading-spinner {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  min-height: 220px;
 }
 
-.App-link {
-  color: #61dafb;
+/* ---- Footer ---- */
+.app-footer {
+  margin-top: auto;
+  padding: 1.25rem 1rem;
+  background-color: var(--nos-dark);
+  color: rgba(255, 255, 255, 0.55);
+  text-align: center;
+  font-size: 0.85rem;
+  border-top: 3px solid var(--nos-yellow);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.app-footer a {
+  color: var(--nos-yellow);
+  text-decoration: none;
+}
+
+.app-footer a:hover {
+  color: var(--nos-yellow-dark);
+}
+
+/* ---- NOS Buttons ---- */
+.btn-nos-primary {
+  background-color: var(--nos-yellow);
+  color: var(--nos-dark);
+  border: 2px solid var(--nos-yellow);
+  font-weight: 700;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-nos-primary:hover,
+.btn-nos-primary:focus {
+  background-color: var(--nos-yellow-dark);
+  border-color: var(--nos-yellow-dark);
+  color: var(--nos-dark);
+  transform: translateY(-1px);
+}
+
+.btn-nos-outline {
+  background-color: transparent;
+  color: var(--nos-yellow);
+  border: 2px solid var(--nos-yellow);
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.btn-nos-outline:hover,
+.btn-nos-outline:focus {
+  background-color: var(--nos-yellow);
+  color: var(--nos-dark);
+  transform: translateY(-1px);
+}
+
+/* ---- NOS Headings ---- */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--nos-black);
+}
+
+.section-heading {
+  color: var(--nos-black);
+  font-weight: 800;
+  position: relative;
+  display: inline-block;
+}
+
+.section-heading::after {
+  content: '';
+  display: block;
+  height: 4px;
+  width: 60px;
+  background-color: var(--nos-yellow);
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+/* ---- NOS Links ---- */
+a {
+  color: var(--nos-black);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--nos-yellow-dark);
+  text-decoration: underline;
+}
+
+/* ---- Feature card NOS overrides ---- */
+.feature-card {
+  border-top: 4px solid var(--nos-yellow) !important;
+}
+
+.feature-card .card-title {
+  color: var(--nos-black) !important;
+  font-weight: 700;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 3rem 1rem 2.5rem;
+    clip-path: none;
   }
-  to {
-    transform: rotate(360deg);
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  .hero-section .lead {
+    font-size: 1rem;
   }
 }
